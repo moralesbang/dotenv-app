@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import runtimeEnv from '@mars/heroku-js-runtime-env';
 
 class App extends Component {
   render() {
     
-    const author = process.env.REACT_APP_AUTHOR;
+    const env = runtimeEnv();
+    const author = env.REACT_APP_AUTHOR;
 
     return (
       <div className="App">
